@@ -1,3 +1,6 @@
+// ***This is the most important and reused module in this class***
+// Also look at your constraints file if you encounter errors, specifically during BitStream generation
+// Some constraint files have slightly different variable names, like "mclk" instead of "clk" or "D0_an" instead of "D0_AN"
 `timescale 1ns / 1ps
 
 module hexEncode(
@@ -15,6 +18,7 @@ module hexEncode(
     assign D1_SEG = 8'b11111111;        // Turns off D1 display
     assign D1_AN  = 4'b1111;            // Turns off all digits of D1
 
+    // You can also choose to do this in hex instead of binary but I personally find binary is easier to read 
     always @(*) begin
         case (in)
             4'b0000: out = 8'b11000000; // 0
@@ -33,7 +37,7 @@ module hexEncode(
             4'b1101: out = 8'b10100001; // D
             4'b1110: out = 8'b10000110; // E
             4'b1111: out = 8'b10001110; // F
-            default: out = 8'b01111010; // "Z" for "error"
+            default: out = 8'b01111010; // "Z" for "error" (Be sure to change this since the Boolean Board can't actually display "Z")
         endcase
     end
 
