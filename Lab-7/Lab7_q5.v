@@ -1,3 +1,5 @@
+//Look at your constraints file if you encounter errors, specifically during BitStream generation
+//Some constraint files have slightly different variable names, like "mclk" instead of "clk" or "D0_an" instead of "D0_AN"
 `timescale 1ns / 1ps
 
 module numbers(
