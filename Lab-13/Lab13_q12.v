@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-//7-Segment display
+// 7-Segment display
 module hexEncode(
     input [3:0] bin,
     output reg [7:0] hex
@@ -31,7 +31,7 @@ endmodule
 
 
 
-//1-bit input sychronizer
+// 1-bit input sychronizer
 module sync(
     input clk,
     input in,
@@ -53,7 +53,7 @@ module display4hex(
     reg [3:0] hexinput = 0;
     reg [1:0] digit = 0;
 
-    reg [16:0] divcounter = 0;  // enough bits for 100k cycles
+    reg [16:0] divcounter = 0;  // Enough bits for 100k cycles
 
     hexEncode encoder(hexinput, seg);
 
@@ -75,7 +75,7 @@ module display4hex(
 endmodule
 
 
-//Quadrature encoder(gray-code)
+// Quadrature encoder(gray-code)
 module QuadEncoder(
     input clk, a, b, reset,
     output [15:0] c
@@ -84,14 +84,14 @@ module QuadEncoder(
     reg [1:0] state = 0;
     reg [15:0] count = 0;
     
-    //reg [15:0] fullcount = 0;
+    // reg [15:0] fullcount = 0;
     assign c = count;
     reg last_a, last_b;
     
     always @ (posedge clk) begin
         if (reset) count = 0;
 
-        //States
+        // States
         if (state[1] != b || state[0] != a) begin
             case (state)
                 0: begin
@@ -143,9 +143,9 @@ module QuadEncoder(
 endmodule
 
 
-//sw[0]  = a
-//sw[15] = b
-//btn[0] = Reset
+// sw[0]  = a
+// sw[15] = b
+// btn[0] = Reset
 module proto_QuadEncoder (
     input [15:0] sw, 
     input [3:0] btn,
@@ -157,13 +157,13 @@ module proto_QuadEncoder (
 
     wire sw0, sw15;
 
-    //Synchronize switch inputs
+    // Synchronize switch inputs
     sync syncA (.clk(clk), .in(sw[0]),  .out(sw0));
     sync syncB (.clk(clk), .in(sw[15]), .out(sw15));
 
     wire [15:0] count;
 
-    //Quadrature decoder
+    // Quadrature decoder
     QuadEncoder QE(
         .clk(clk),
         .a(sw0),
@@ -172,7 +172,7 @@ module proto_QuadEncoder (
         .c(count)
     );
 
-    //7-segment display
+    // 7-segment display
     display4hex DISP(
         .in(count),
         .clk(clk),
