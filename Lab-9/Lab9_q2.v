@@ -1,3 +1,4 @@
+// This question was 6% of the content on the final
 module testbench;
     reg C, D;
     wire Q, Qn;
