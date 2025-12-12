@@ -1,3 +1,4 @@
+// This question alone was 12% of the content on the final
 module ff (input c,d, output q, qn);
         wire w1, w2, w3, w4;
     
