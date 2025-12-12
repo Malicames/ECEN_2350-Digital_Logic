@@ -1,6 +1,6 @@
 This was my final project for this class and I went far beyond what was required. 
 I did all the extra credit opportunities receiving 12+ points of extra credit.
-Most of my explanations of how my code works are in the Code Explanation txt. and I highly recommend throwing it into a google doc for readability. 
+Most of my explanations for how my code works are in the Code Explanation PDF. 
 If I had to take this class again, I would try to make Tetris instead of a Tug-of-War game.
 And if you have been following along with my code or just decided to look at my final project, I would highly encourage you to do Tetris as an addition to my final project.
 Professor Kooros will be amazed to see that. 
