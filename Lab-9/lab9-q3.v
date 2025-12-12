@@ -1,3 +1,4 @@
+// This module is very important and gets reused a lot, make sure you understand how it works
 `timescale 1ns / 1ps
 
 module shift_register(
