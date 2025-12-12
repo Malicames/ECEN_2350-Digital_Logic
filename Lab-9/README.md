@@ -4,4 +4,4 @@ The concepts in this lab are very critical to the understanding of content later
 Because of this, I left everything uncommented to let you come up with your own descriptions for what's happening. 
 You will also use the shift register throughout later labs, so make sure that it is easily accessible.
 If you encounter errors, specifically during BitStream generation, look at your constraints file. 
-Some constraint files have slightly different variable names, like "mclk" instead of "clk" or "D0_an" instead of "D0_AN"
+Some constraint files have slightly different variable names, like "mclk" instead of "clk" or "D0_an" instead of "D0_AN".
